@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal the Most Beautiful Girl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            animation: fadeIn 1.5s ease;
+        }
+        #hiddenMessage {
+            display: none;
+            font-size: 2rem;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff4081;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+        }
+        .btn:hover {
+            background: #ff4081;
+            color: white;
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.5);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Most Beautiful Girl Ever is... 💖</h1>
+        <button class="btn" onclick="showFirstMessage()">Here is the answer</button>
+        <p id="hiddenMessage">Is... ?</p>
+        <button class="btn" id="revealButton" style="display: none;" onclick="showFinalMessage()">Please show the answer</button>
+        <p id="finalMessage" style="display: none; font-size: 2rem; margin-top: 20px;">YOU! ❤️</p>
+    </div>
+
+    <script>
+        function showFirstMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+            document.getElementById('revealButton').style.display = 'inline-block';
+        }
+        function showFinalMessage() {
+            window.location.href = 'third-page.html';
+        }
+    </script>
+</body>
+</html>
